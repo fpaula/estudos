@@ -1,15 +1,15 @@
 # -*- encoding : utf-8 -*-
 
 Dado /^que eu estou na pagina de novo post$/ do
-  pending # express the regexp above with the code you wish you had
+  visit new_posts_path
 end
 
-Quando /^eu preencho o "([^"]*)" com "([^"]*)"$/ do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+Quando /^eu preencho o "([^"]*)" com "([^"]*)"$/ do |campo, valor|
+  fill_in campo, :with => valor
 end
 
-Quando /^eu clico no botão "([^"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Quando /^eu clico no botão "([^"]*)"$/ do |botao|
+  click_button botao
 end
 
 Então /^o post deve ser salvo$/ do

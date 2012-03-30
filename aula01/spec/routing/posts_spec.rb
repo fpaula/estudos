@@ -10,4 +10,14 @@ describe "posts route" do
     subject { {:get => new_posts_path} }
     it { should route_to(:controller => "posts", :action => "new") }
   end
+=begin  
+  context "create" do
+    subject { {:post => "/posts"} }
+    it { should route_to(:controller => "posts", :action => "create") }
+  end
+=end
+  context "named path" do
+    subject { {:get => posts_path} }
+    it { should route_to(:controller => "posts", :action => "index") }
+  end
 end

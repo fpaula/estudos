@@ -1,0 +1,8 @@
+<%= form_for @post do |f| %>
+  <%= f.label :titulo, "título" %>
+  <%= f.text_field :titulo %>
+  <%= f.text_field :texto, :id=>"texto" %>
+  <%= f.label :slug, "slug" %>
+  <%= f.text_field :slug %>
+  <%= f.submit "salvar" %>
+<% end %>

@@ -1,7 +1,7 @@
 Aula01::Application.routes.draw do
+
+  resources :posts, :only => [:index, :new, :create]
   
-  match 'posts/new' => 'posts#new', :as => 'new_posts'
-  match 'posts' => 'posts#index', :as => 'posts'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

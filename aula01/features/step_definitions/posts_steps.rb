@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 
 Dado /^que eu estou na pagina de novo post$/ do
-  visit new_posts_path
+  visit new_post_path
 end
 
 Quando /^eu preencho o "([^"]*)" com "([^"]*)"$/ do |campo, valor|
@@ -13,9 +13,9 @@ Quando /^eu clico no botão "([^"]*)"$/ do |botao|
 end
 
 Então /^o post deve ser salvo$/ do
-  pending # express the regexp above with the code you wish you had
+  Post.count.should eq 1
 end
 
 Então /^eu devo ver a mensagem Post salvo com sucesso com o id$/ do
-  pending # express the regexp above with the code you wish you had
+  find('p.notice').text.should match /Post \d+ salvo com sucesso/m
 end

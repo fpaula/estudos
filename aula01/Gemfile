@@ -36,4 +36,5 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'selenium-webdriver', '>=2.20.0'
 end

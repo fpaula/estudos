@@ -1,3 +1,6 @@
+<p class="error">
+  <%= flash[:error] %>
+</p>
 <%= form_for @post do |f| %>
   <%= f.label :titulo, "título" %>
   <%= f.text_field :titulo %>

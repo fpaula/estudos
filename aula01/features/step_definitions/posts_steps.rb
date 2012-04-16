@@ -24,6 +24,6 @@ Dado /^que eu tenho um post com slug fred$/ do
   Post.create(:slug=>'fred')
 end
 
-Então /^eu devo ver a mensagem "([^"]*)"$/ do |mensagem|
-  find('p.error').text.should eq(mensagem)
+Então /^eu devo ver a mensagem Slug duplicado$/ do
+  find('p.error').text.should match /Slug dublicado/
 end

@@ -15,7 +15,6 @@ Funcionalidade: CRUD de Posts
     Então o post deve ser salvo
     E eu devo ver a mensagem Post salvo com sucesso com o id 
     
-  @wip
   Cenário: Validar slug única
     Dado que eu tenho um post com slug fred
     E que eu estou na página de novo post
@@ -23,4 +22,4 @@ Funcionalidade: CRUD de Posts
     E eu preencho o "texto" com "Esse post é legal." 
     E eu preencho o "slug" com "fred"
     E eu clico no botão "salvar"
-    Então eu devo ver a mensagem "slug duplicado"
+    Então eu devo ver a mensagem Slug duplicado

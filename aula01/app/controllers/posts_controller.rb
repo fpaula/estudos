@@ -5,8 +5,13 @@ class PostsController < ApplicationController
   
   def create
     post = Post.create(params[:post])
-    flash[:notice] = "Post #{post.id} salvo com sucesso"
-    redirect_to :action => :index
+    if post.valid?
+      flash[:notice] = "Post #{post.id} salvo com sucesso"
+      redirect_to :action => :index
+    else
+      flash[:error] = "Slug dublicado"
+      redirect_to :action => :new
+    end
   end
   
   def index

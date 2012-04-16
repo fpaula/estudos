@@ -31,4 +31,25 @@ describe PostsController do
     its(:code) { should eq '200' }
     it { should render_template(:index) }
   end
+
+  describe 'GET: validate_slug' do
+    before { get :validate_slug }
+    subject { response }
+    its(:code) { should eq '200' }
+    
+    describe "valid slug" do
+      before { get :validate_slug, :slug => 'slug1' }
+      subject { response }
+      it { subject.body.should eq ({:slug => true}).to_json }
+    end
+    
+    describe 'invalid slug' do
+      before do
+        Post.stub!(:find_by_slug).with('slug1').and_return(Post.new)
+        get :validate_slug, :slug => 'slug1'
+      end
+      subject { response }
+      its(:body) { should eq ({:slug => false}).to_json }
+    end
+  end
 end

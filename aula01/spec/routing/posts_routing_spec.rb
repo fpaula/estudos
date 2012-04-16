@@ -20,4 +20,9 @@ describe "posts route" do
     subject { {:get => posts_path} }
     it { should route_to(:controller => "posts", :action => "index") }
   end
+  
+  context "validate slug" do
+    subject { {:get => '/posts/validate_slug'} }
+    it { should route_to(:controller => "posts", :action => "validate_slug") }
+  end
 end

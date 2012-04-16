@@ -9,3 +9,18 @@
   <%= f.text_field :slug %>
   <%= f.submit "salvar" %>
 <% end %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#post_slug").blur(function(){   
+    $.getJSON('/posts/validate_slug?slug='+$(this).val(), function(data) {
+      if (data.slug === false) {
+        $("p.error").html("Slug dublicado");
+      } else {
+        $("p.error").html("");
+      }
+    });
+  });
+});
+</script>

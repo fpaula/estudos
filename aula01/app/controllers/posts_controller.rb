@@ -16,4 +16,8 @@ class PostsController < ApplicationController
   
   def index
   end
+  
+  def validate_slug
+    render :json => {:slug => Post.find_by_slug(params[:slug]).nil?}.to_json
+  end
 end

@@ -1,6 +1,7 @@
 Aula01::Application.routes.draw do
 
   resources :posts, :only => [:index, :new, :create]
+  get 'posts/validate_slug'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

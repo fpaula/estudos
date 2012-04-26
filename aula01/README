@@ -11,3 +11,17 @@ TODO
 - validar slug via ajax
 - renderizar mensagem de erro via JS
 - validar slug unica sem JS
+
+
+
+
+Page Object Model
+http://code.google.com/p/selenium/wiki/PageObjects
+
+Ler artigo:
+http://aslakhellesoy.com/post/11055981222/the-training-wheels-came-off
+
+CUCUMBER
+para ver traducoes: cucumber --i18n pt
+usar exemplos é legal
+cuidado ao usar background

@@ -25,3 +25,34 @@ CUCUMBER
 para ver traducoes: cucumber --i18n pt
 usar exemplos é legal
 cuidado ao usar background
+
+02/05:  Shared Examples
+        Shared Context
+        Custom matchers
+        
+        config.include FactoryGirl::Syntax::Methods (inclui os metodos)
+        
+        ActiveSupport::Concern
+        
+module Abc
+  module ClassMethods
+    def self.metodo1
+    end
+    
+    def self.metodo2
+    end
+  end
+  
+  module InstanceMethods
+    def metodo1
+    end
+    
+    def metodo2
+    end
+  end
+end
+
+class MinhaClasse
+  extend Abc::ClassMethods
+  include Abc::InstanceMethods
+end

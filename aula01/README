@@ -56,3 +56,24 @@ class MinhaClasse
   extend Abc::ClassMethods
   include Abc::InstanceMethods
 end
+
+
+TODO
+#fazer um exemplo de expectation error e to change
+
+Exit code (retorno do ultimo processo) $?
+
+
+Para stubar servicos, usar VCR
+
+MOC: garantir que executa uma coisa com aqueles parametros (expectativas)
+  Pode garantir por exemplo quantas vezes chama um metodo, ou se nao chamou, etc
+  Geralmente usado com interações externas. Ex: escrita em disco (garantir que escreveu o arquivo só uma vez)
+  FakeFS (moca escrita em disco)
+
+
+STUB: garantir chamada e retorno
+  É usado com mais frequencia do que MOC.
+  Em sistemas grandes, para iteração com classes que geram muito processamento (calculo por exemplo)
+  Pesar se vale a pena usar
+  O principal uso é em chamadas para servicos externos (apis, etc)

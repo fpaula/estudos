@@ -21,4 +21,14 @@ describe Post do
     
     it { "".should_not be_slugabble }
   end
+  
+  context 'validar slug' do
+    before { subject.slug = 'um-teste' }
+    it { should have_slug }
+  
+    it { should be_new_record }
+    it { should be_cool(1) }
+  
+    it { should satisfy { |v| v.slug =~ /[\w-]/ } }
+  end
 end
